@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #e9e9e9;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.todo_container {
+  width: 480px;
+  background-color: #fff;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 16%);
+}
+
+.todo_container .todo_header {
+  width: 100%;
+  padding: 1.5rem;
+}
+
+.todo_container .todo_body {
+  padding: 1.5rem;
+  padding-top: 0;
+}
+
+.todo_form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 8px;
+}
+
+.todo_form > input {
+  flex: 1;
+  outline: none;
+  border: 1px solid #c4c4c4;
+  padding: 8px 12px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+
+.todo_form > button {
+  outline: none;
+  background-color: #1166c7;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  border: none;
+  font-size: 16px;
+  padding: 8px 16px;
+  cursor: pointer;
+  text-transform: capitalize;
+  transition: 0.2s ease-in-out;
+}
+
+.todo_form > button:hover {
+  background-color: #0d58ad;
+}
+
+.todos_list {
+  width: 100%;
+}
+
+.todos_list > li {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e7e7e7;
+  padding: 20px 0;
+}
+
+.todos_list > li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.todos_list > li > p {
+  font-size: 16px;
+  text-transform: capitalize;
+}
+
+.todos_list .todo_btns {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.todos_list > li button {
+  padding: 8px;
+  font-size: 16px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.todos_list > li button.edit_todo_btn {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.todos_list > li button.edit_todo_btn:hover {
+  background-color: #3b943e;
+}
+
+.todos_list > li button.delete_todo_btn {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.todos_list > li button.delete_todo_btn:hover {
+  background-color: #d83429;
+}
+
+.error {
+  width: 100%;
+  padding: 16px;
+  background-color: #ffe2e0;
+  color: #cd2b1f;
+  margin-bottom: 8px;
+}
+
+.success {
+  width: 100%;
+  padding: 16px;
+  background-color: #d2fdd4;
+  color: #246e27;
+  margin-bottom: 8px;
+}
+
+.fadeOut {
+  animation: fadeOut 0.2s 1s ease-in-out;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.modal_backdrop {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 80%);
+  /* backdrop-filter: blur(4px); */
+  display: none;
+}
+
+.modal_backdrop.active {
+  display: block;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 40%);
+}
+
+.modal .modal_header {
+  padding: 1.5rem;
+  width: 100%;
+}
+
+.modal .modal_body {
+  width: 100%;
+  padding: 1.5rem;
+  padding-top: 0;
+}
+
+.modal .modal_body > input {
+  width: 100%;
+  outline: none;
+  border: 1px solid #c4c4c4;
+  padding: 8px 12px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+
+.modal .modal_footer {
+  padding: 1.5rem;
+  padding-top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal .modal_footer > button {
+  padding: 8px 16px;
+  outline: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  background: transparent;
+  border: none;
+}
+
+.modal .modal_footer > button.btn_cancel {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.modal .modal_footer > button.btn_cancel:hover {
+  background-color: #cd2b1f;
+}
+
+.modal .modal_footer > button.btn_edit {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.modal .modal_footer > button.btn_edit:hover {
+  background-color: #3b943e;
+  color: #fff;
+}
